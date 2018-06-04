@@ -1,3 +1,28 @@
-<p>
-  questions works!
-</p>
+<form class="questions-form">
+  <mat-form-field class="questions-full-width">
+    <input matInput placeholder="Ваш вопрос..." [(ngModel)]=Row.name name="first">
+  </mat-form-field>
+</form>
+<button mat-raised-button color="primary" (click)=AddQuestion()>Додати</button>
+
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+
+
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> Питання </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

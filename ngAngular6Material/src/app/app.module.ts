@@ -9,6 +9,11 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import {RouterModule, Routes} from '@angular/router';
 import { QuestionsComponent } from './questions/questions.component';
 import { AnswersComponent } from './answers/answers.component';
+import { MatFormFieldModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {FormsModule} from '@angular/forms';
 
 const appRoutes: Routes = [
   {path: 'questions', component: QuestionsComponent},
@@ -26,13 +31,18 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
+    MatFormFieldModule,
+    MatInputModule,
     BrowserAnimationsModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
