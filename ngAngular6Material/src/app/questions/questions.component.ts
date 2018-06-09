@@ -14,6 +14,7 @@ export class QuestionsComponent implements OnInit {
   Row = { position: 5, name: 'sda' };
   AddQuestion = () => {
     this.Row.position++;
+    // tslint:disable-next-line:prefer-const
     let tempRow = Object.assign({}, this.Row);
     this.dataSource.data.push(tempRow);
     this.dataSource._updateChangeSubscription();
