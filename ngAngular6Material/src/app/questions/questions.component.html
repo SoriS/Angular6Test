@@ -1,25 +1,32 @@
-<div class="container-fluid">
 
-  <div class="row">
-
-    <form class="questions-form">
-      <mat-form-field class="questions-full-width">
-        <input matInput placeholder="Ваш вопрос..." [(ngModel)]=Row.name name="first">
-      </mat-form-field>
-    </form>
-    <button mat-raised-button color="primary" (click)=AddQuestion()>Додати</button>
-
-  </div>
   <div class="row"> 
     <div class="col-md-3">
       <div>
-        <div (click)=SelectCategory(data) [ngStyle]="{'background-color': data === selectedCategory ? 'green' : '' }" *ngFor="let data of categories">
+        
+
+        <div class="mtab" (click)=SelectCategory(data) [ngStyle]="{'background-color': data === selectedCategory ? 'silver' : '' }" *ngFor="let data of categories">
+            <ul>
+              <li>
            {{data.name}}
+           </li>
+          </ul>
         </div>
+      
       </div>
     </div>
     <div class="col-md-9">
-      <h2>Basic Table</h2>
+        <div class="container-fluid">
+
+            <div class="row" style="margin-left: 0px;margin-bottom: 10px;">
+          
+              <form class="questions-form">
+                <mat-form-field class="questions-full-width">
+                  <input matInput placeholder="Ваш вопрос..." [(ngModel)]=Row.name name="first">
+                </mat-form-field>
+              </form>
+              <button mat-raised-button color="primary" (click)=AddQuestion()>Додати</button>
+          
+            </div>
       <table class=".table-striped">
         <thead>
           <tr>
@@ -29,11 +36,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let data of selectedCategory.questions">
-            <td>{{data.position}}</td>
+          <tr *ngFor="let data of selectedCategory.questions index as i">
+            <td>{{i}}</td>
             <td>{{data.name}}</td>
             <td>
-              <button (click)=RemoveItem(data)> - </button>
+              <button class=" delButt" (click)=RemoveItem(data)> - </button>
             </td>
           </tr>
         </tbody>

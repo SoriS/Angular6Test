@@ -1,2 +1,21 @@
 
-<button (click)=StartTest()>Start</button>
+<div class="center">
+<button class='StartTest' (click)=StartTest()>Начать</button>
+</div>
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Вопрос</h2>
+    </div>
+    <div class="modal-body">
+           <p> {{quest}} </p>
+    </div>
+    <div class="modal-footer">
+      <button class="YesButt" id="YesButton">Да</button>
+      <button class="NoButt" id="NoButton">Нет</button>
+    </div>
+  </div>
+</div>

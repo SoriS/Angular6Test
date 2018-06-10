@@ -9,40 +9,28 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
   styleUrls: ['./questions.component.css']
 })
 export class QuestionsComponent implements OnInit, OnChanges {
-  Row = { position: 5, name: 'sda' };
-  myData: PeriodicElement[] = [
-    { position: 1, name: 'Питання 1 ' },
-    { position: 2, name: 'Питання 2' },
-    { position: 3, name: 'Питання 3' },
-    { position: 4, name: 'Питання 4' }
-  ];
-
+  Row = {  name: '' };
   categories: Questions[] = [
     {
-      position: 1,
-      name: 'Категория 1 ',
+      name: 'Модель невивідності',
       questions: <PeriodicElement[]>[
-        { position: 1, name: 'Питання 1.1 ' },
-        { position: 2, name: 'Питання 1.2' },
-        { position: 3, name: 'Питання 1.3' },
-        { position: 4, name: 'Питання 1.4' }
+        {  name: 'Питання 1.1 ' },
+        {  name: 'Питання 1.2' },
+        {  name: 'Питання 1.3' },
+        {  name: 'Питання 1.4' }
       ]
     },
     {
-      position: 1,
-      name: 'Категория 2',
+      name: 'Модель невтручання',
       questions: <PeriodicElement[]>[
-        { position: 1, name: 'Питання 2.1 ' },
-        { position: 2, name: 'Питання 2.2' },
-        { position: 3, name: 'Питання 2.3' },
-        { position: 4, name: 'Питання 2.4' }
+        {  name: 'Питання 2.1 ' },
+        { name: 'Питання 2.2' },
+        {  name: 'Питання 2.3' },
+        {  name: 'Питання 2.4' }
       ]
     },
 
   ];
-  //   //{ position: 2, name: 'Категория 2 ' },
-  // ];
-
   selectedCategory: Questions = this.categories[0];
 
   SelectCategory(data: Questions): void {
@@ -65,9 +53,6 @@ export class QuestionsComponent implements OnInit, OnChanges {
   }
   AddQuestion = () => {
 
-    this.Row.position = this.myData.length;
-
-    this.Row.position++;
     // tslint:disable-next-line:prefer-const
     let tempRow = <PeriodicElement>Object.assign({}, this.Row);
 
@@ -90,15 +75,13 @@ export class QuestionsComponent implements OnInit, OnChanges {
 }
 
 export class Questions {
-  position: number;
   name: string;
   questions: PeriodicElement[];
 }
 
 export class PeriodicElement {
   name: string;
-  position: number;
-  answer?: boolean;
+  answer?: any;
 }
 
 

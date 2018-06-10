@@ -6,3 +6,10 @@
   width: 200px;
   box-shadow: 3px 0 6px rgba(0,0,0,.24);
 }
+.mat-drawer-content {
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 100%;
+  overflow: unset;
+}
